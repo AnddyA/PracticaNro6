@@ -1,0 +1,68 @@
+{
+    "controlador.ed.lista.ListaEnlazada": {
+        "cabecera": {
+            "info": {
+                "@class": "modelo.Pais",
+                "id": 1,
+                "nombre": "EstadosUnidos",
+                "ciudad": "New York",
+                "estado": true
+            },
+            "sig": {
+                "info": {
+                    "@class": "modelo.Pais",
+                    "id": 2,
+                    "nombre": "ReinoUnido",
+                    "ciudad": "Londre",
+                    "estado": true
+                },
+                "sig": {
+                    "info": {
+                        "@class": "modelo.Pais",
+                        "id": 3,
+                        "nombre": "Francia",
+                        "ciudad": "Paris",
+                        "estado": true
+                    },
+                    "sig": {
+                        "info": {
+                            "@class": "modelo.Pais",
+                            "id": 4,
+                            "nombre": "Italia",
+                            "ciudad": "Milan",
+                            "estado": true
+                        },
+                        "sig": {
+                            "info": {
+                                "@class": "modelo.Pais",
+                                "id": 5,
+                                "nombre": "España",
+                                "ciudad": "Madrid",
+                                "estado": true
+                            },
+                            "sig": {
+                                "info": {
+                                    "@class": "modelo.Pais",
+                                    "id": 6,
+                                    "nombre": "Brasil",
+                                    "ciudad": "Janeiro",
+                                    "estado": true
+                                },
+                                "sig": {
+                                    "info": {
+                                        "@class": "modelo.Pais",
+                                        "id": 7,
+                                        "nombre": "Ecuador",
+                                        "ciudad": "Quito",
+                                        "estado": true
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "size": 7
+    }
+}

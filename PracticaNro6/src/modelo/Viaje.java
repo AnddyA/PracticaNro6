@@ -12,24 +12,43 @@ import java.util.Date;
  */
 public class Viaje {
 
-    private Integer id_pais;
-    private String nro_viaje;
+    private Integer id;
+    private Integer idPais; //origen del viaje
+    private String nroViaje; // destino del viaje
+    private Double distancia;
     private Date fecha;
+    private TipoViaje tipo;
 
-    public Integer getId_pais() {
-        return id_pais;
+    public Integer getId() {
+        return id;
     }
 
-    public void setId_pais(Integer id_pais) {
-        this.id_pais = id_pais;
+    public void setId(Integer id) {
+        this.id = id;
     }
 
-    public String getNro_viaje() {
-        return nro_viaje;
+    public Integer getIdPais() {
+        return idPais;
     }
 
-    public void setNro_viaje(String nro_viaje) {
-        this.nro_viaje = nro_viaje;
+    public void setIdPais(Integer idPais_origen) {
+        this.idPais = idPais_origen;
+    }
+
+    public String getNroViaje() {
+        return nroViaje;
+    }
+
+    public void setNroViaje(String nroViaje) {
+        this.nroViaje = nroViaje;
+    }
+
+    public Double getDistancia() {
+        return distancia;
+    }
+
+    public void setDistancia(Double distancia) {
+        this.distancia = distancia;
     }
 
     public Date getFecha() {
@@ -39,5 +58,19 @@ public class Viaje {
     public void setFecha(Date fecha) {
         this.fecha = fecha;
     }
+
+    public TipoViaje getTipo() {
+        return tipo;
+    }
+
+    public void setTipo(TipoViaje tipo) {
+        this.tipo = tipo;
+    }
+
+    @Override
+    public String toString() {
+        return "Viaje{" + "idPais=" + idPais + ", nroViaje=" + nroViaje + ", distancia=" + distancia + '}';
+    }
+    
 
 }

@@ -6,6 +6,7 @@
                 "id": 1,
                 "nombre": "EstadosUnidos",
                 "ciudad": "New York",
+                "nroPais": 454545,
                 "estado": true
             },
             "sig": {
@@ -14,6 +15,7 @@
                     "id": 2,
                     "nombre": "ReinoUnido",
                     "ciudad": "Londre",
+                    "nroPais": 434343,
                     "estado": true
                 },
                 "sig": {
@@ -22,6 +24,7 @@
                         "id": 3,
                         "nombre": "Francia",
                         "ciudad": "Paris",
+                        "nroPais": 101010,
                         "estado": true
                     },
                     "sig": {
@@ -30,6 +33,7 @@
                             "id": 4,
                             "nombre": "Italia",
                             "ciudad": "Milan",
+                            "nroPais": 404040,
                             "estado": true
                         },
                         "sig": {
@@ -38,6 +42,7 @@
                                 "id": 5,
                                 "nombre": "España",
                                 "ciudad": "Madrid",
+                                "nroPais": 858585,
                                 "estado": true
                             },
                             "sig": {
@@ -46,6 +51,7 @@
                                     "id": 6,
                                     "nombre": "Brasil",
                                     "ciudad": "Janeiro",
+                                    "nroPais": 444333,
                                     "estado": true
                                 },
                                 "sig": {
@@ -54,6 +60,7 @@
                                         "id": 7,
                                         "nombre": "Ecuador",
                                         "ciudad": "Quito",
+                                        "nroPais": 112211,
                                         "estado": true
                                     }
                                 }

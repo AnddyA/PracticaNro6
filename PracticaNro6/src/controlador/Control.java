@@ -10,6 +10,7 @@ import controlador.ed.grafo.GrafoEtiquetadoD;
 import controlador.ed.grafo.GrafoEtiquetadoND;
 import java.util.Date;
 import modelo.Pais;
+import modelo.TipoViaje;
 import vista.FrmGrafo;
 
 /**
@@ -44,74 +45,161 @@ public class Control {
 //            System.out.println("error en GE " + e);
 //        }
 //        
-        
-        //cargar datos a json
+
+//          -------------cargar datos a json----------------
 //
 //        try {
 //            PaisDao pd = new PaisDao();
 //
 //            pd.getPais().setNombre("EstadosUnidos");
 //            pd.getPais().setCiudad("New York");
+//            pd.getPais().setNro_viaje("454545");
 //            pd.getPais().setEstado(true);
 //            pd.guardar();
 //            pd.setPais(null);
 //
 //            pd.getPais().setNombre("ReinoUnido");
 //            pd.getPais().setCiudad("Londre");
+//            pd.getPais().setNro_viaje("454545");
 //            pd.getPais().setEstado(true);
 //            pd.guardar();
 //            pd.setPais(null);
 //
 //            pd.getPais().setNombre("Francia");
 //            pd.getPais().setCiudad("Paris");
+//            pd.getPais().setNro_viaje("454545");
 //            pd.getPais().setEstado(true);
 //            pd.guardar();
 //            pd.setPais(null);
 //
 //            pd.getPais().setNombre("Italia");
 //            pd.getPais().setCiudad("Milan");
+//            pd.getPais().setNro_viaje("454545");
 //            pd.getPais().setEstado(true);
 //            pd.guardar();
 //            pd.setPais(null);
 //
-//
 //            pd.getPais().setNombre("España");
 //            pd.getPais().setCiudad("Madrid");
+//            pd.getPais().setNro_viaje("454545");
 //            pd.getPais().setEstado(true);
 //            pd.guardar();
 //            pd.setPais(null);
 //
 //            pd.getPais().setNombre("Brasil");
 //            pd.getPais().setCiudad("Janeiro");
+//            pd.getPais().setNro_viaje("454545");
 //            pd.getPais().setEstado(true);
 //            pd.guardar();
 //            pd.setPais(null);
 //
 //            pd.getPais().setNombre("Ecuador");
 //            pd.getPais().setCiudad("Quito");
+//            pd.getPais().setNro_viaje("454545");
 //            pd.getPais().setEstado(true);
 //            pd.guardar();
 //            pd.setPais(null);
 //
-//            
 //        } catch (Exception e) {
 //        }
 
-
-
-        //cargar datos viaje a json
-        
-//        try {
-//            ViajeDao vd = new ViajeDao();
-//            
-//            vd.getV().setFecha(new Date());
-//            vd.getV().setNro_viaje("454545");
-//            vd.guardar();
-//            vd.setV(null);
-//            
-//            
-//        } catch (Exception e) {
-//        }
+//      ----------------cargar datos viaje a json-----------------
+        try {
+            ViajeDao vd = new ViajeDao();
+            
+            vd.getViaje().setIdPais(1);
+            vd.getViaje().setNroViaje("454545");
+            vd.getViaje().setDistancia(875.50);
+            vd.getViaje().setTipo(TipoViaje.Valido);
+            vd.guardar();
+            vd.setViaje(null);
+            
+            vd.getViaje().setIdPais(1);
+            vd.getViaje().setNroViaje("414141");
+            vd.getViaje().setDistancia(855.25);
+            vd.getViaje().setTipo(TipoViaje.Valido);
+            vd.guardar();
+            vd.setViaje(null);
+            
+            vd.getViaje().setIdPais(5);
+            vd.getViaje().setNroViaje("444333");
+            vd.getViaje().setDistancia(754.25);
+            vd.getViaje().setTipo(TipoViaje.Valido);
+            vd.guardar();
+            vd.setViaje(null);
+            
+            vd.getViaje().setIdPais(2);
+            vd.getViaje().setNroViaje("454545");
+            vd.getViaje().setDistancia(875.50);
+            vd.getViaje().setTipo(TipoViaje.Valido);
+            vd.guardar();
+            vd.setViaje(null);
+            
+            vd.getViaje().setIdPais(2);
+            vd.getViaje().setNroViaje("414141");
+            vd.getViaje().setDistancia(855.25);
+            vd.getViaje().setTipo(TipoViaje.Valido);
+            vd.guardar();
+            vd.setViaje(null);
+            
+            vd.getViaje().setIdPais(3);
+            vd.getViaje().setNroViaje("404040");
+            vd.getViaje().setDistancia(754.25);
+            vd.getViaje().setTipo(TipoViaje.Valido);
+            vd.guardar();
+            vd.setViaje(null);
+            
+            vd.getViaje().setIdPais(3);
+            vd.getViaje().setNroViaje("4443344");
+            vd.getViaje().setDistancia(545.0);
+            vd.getViaje().setTipo(TipoViaje.Valido);
+            vd.guardar();
+            vd.setViaje(null);
+            
+            vd.getViaje().setIdPais(4);
+            vd.getViaje().setNroViaje("101010");
+            vd.getViaje().setDistancia(484.25);
+            vd.getViaje().setTipo(TipoViaje.Valido);
+            vd.guardar();
+            vd.setViaje(null);
+            
+            vd.getViaje().setIdPais(4);
+            vd.getViaje().setNroViaje("404040");
+            vd.getViaje().setDistancia(548.44);
+            vd.getViaje().setTipo(TipoViaje.Valido);
+            vd.guardar();
+            vd.setViaje(null);
+            
+            vd.getViaje().setIdPais(5);
+            vd.getViaje().setNroViaje("454545");
+            vd.getViaje().setDistancia(885.0);
+            vd.getViaje().setTipo(TipoViaje.Valido);
+            vd.guardar();
+            vd.setViaje(null);
+            
+            vd.getViaje().setIdPais(5);
+            vd.getViaje().setNroViaje("112211");
+            vd.getViaje().setDistancia(582.10);
+            vd.getViaje().setTipo(TipoViaje.Valido);
+            vd.guardar();
+            vd.setViaje(null);
+            
+            vd.getViaje().setIdPais(6);
+            vd.getViaje().setNroViaje("101010");
+            vd.getViaje().setDistancia(748.0);
+            vd.getViaje().setTipo(TipoViaje.Valido);
+            vd.guardar();
+            vd.setViaje(null);
+            
+            vd.getViaje().setIdPais(6);
+            vd.getViaje().setNroViaje("858585");
+            vd.getViaje().setDistancia(487.0);
+            vd.getViaje().setTipo(TipoViaje.Valido);
+            vd.guardar();
+            vd.setViaje(null);
+            
+        } catch (Exception e) {
+        }
     }
 
 }

@@ -55,6 +55,7 @@ public class PaisGrafo {
         this.lista = lista;
     }
 
+    
     private void llenarGrafo() {
         try {
             for (int i = 0; i < lista.size(); i++) {
@@ -64,12 +65,12 @@ public class PaisGrafo {
                 ListaEnlazada<Viaje> listaV = new ViajeDao().listaPorPais(pais.getId());
                 for (int j = 0; j < listaV.size(); j++) {
                     Viaje viaje = listaV.get(j);
-                    if (mapa.get(viaje.getNro_viaje()) != null) {
-                        Double suma = mapa.get(viaje.getNro_viaje());
-                        suma += 1.0;
-                        mapa.put(viaje.getNro_viaje(), suma);
+                    if (mapa.get(viaje.getNroViaje()) != null) {
+                        Double suma = mapa.get(viaje.getNroViaje());
+                        suma += viaje.getDistancia();
+                        mapa.put(viaje.getNroViaje(), suma);
                     } else {
-                        mapa.put(viaje.getNro_viaje(), 1.0);
+                        mapa.put(viaje.getNroViaje(), viaje.getDistancia());
                     }
                 }
                 for (Map.Entry<String, Double> entry : mapa.entrySet()) {
@@ -90,7 +91,7 @@ public class PaisGrafo {
     private Pais getPais(String nroViaje) throws VacioException, PosicionException {
         Pais aux = null;
         for (int i = 0; i < lista.size(); i++) {
-            if (lista.get(i).getId().equals(nroViaje)) {
+            if (lista.get(i).getNro_viaje().equals(nroViaje)) {
                 aux = lista.get(i);
                 break;
             }

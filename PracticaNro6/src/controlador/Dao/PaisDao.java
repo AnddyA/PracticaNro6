@@ -46,14 +46,16 @@ public class PaisDao extends AdaptadorDao<Pais> {
         return listar().size() + 1;
     }
     
-    public Pais buscarPorId(Integer id) throws VacioException, PosicionException {
+    public Pais buscarId(String nroViaje) throws VacioException, PosicionException {
+        Pais pais = null;
         ListaEnlazada<Pais> lista = listar();
-        for (int i = 0; i < lista.size(); i++) {
-            Pais pais = lista.get(i);
-            if (pais.getId().equals(id)) {
-                return pais;
+        for(int i = 0; i < lista.size(); i++) {
+            Pais aux = lista.get(i);
+            if(aux.getNro_viaje().equalsIgnoreCase(nroViaje)) {
+                pais = aux;
+                break;
             }
         }
-        return null; // Return null if Pais with the given ID is not found
+        return pais;
     }
 }

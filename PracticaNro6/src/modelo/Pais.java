@@ -9,22 +9,13 @@ package modelo;
  * @author andy
  */
 public class Pais {
+
     private Integer id;
     private String nombre;
     private String ciudad;
+    private String nroPais;
     private Boolean estado;
 
-    public Pais() {
-    }
-    
-    public Pais(Integer id, String nombre, String ciudad, Boolean estado) {
-        this.id = id;
-        this.nombre = nombre;
-        this.ciudad = ciudad;
-        this.estado = estado;
-    }
-
-    
     public Integer getId() {
         return id;
     }
@@ -48,7 +39,15 @@ public class Pais {
     public void setCiudad(String ciudad) {
         this.ciudad = ciudad;
     }
-    
+
+    public String getNro_viaje() {
+        return nroPais;
+    }
+
+    public void setNro_viaje(String nro_viaje) {
+        this.nroPais = nro_viaje;
+    }
+
     public Boolean getEstado() {
         return estado;
     }
@@ -60,5 +59,5 @@ public class Pais {
     @Override
     public String toString() {
         return nombre + "(" + ciudad + ")";
-    } 
+    }
 }

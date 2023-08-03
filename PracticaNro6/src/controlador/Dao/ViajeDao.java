@@ -34,7 +34,7 @@ public class ViajeDao extends AdaptadorDao<Viaje> {
     }
 
     public void guardar() throws IOException, VacioException, PosicionException {
-        viaje.setId_pais(generateId());
+        viaje.setId(generateId());
         this.guardar(viaje);
     }
 
@@ -47,12 +47,12 @@ public class ViajeDao extends AdaptadorDao<Viaje> {
         return listar().size() + 1;
     }
 
-    public ListaEnlazada<Viaje> listaPorPais(Integer id_Pais) throws VacioException, PosicionException {
+    public ListaEnlazada<Viaje> listaPorPais(Integer id) throws VacioException, PosicionException {
         ListaEnlazada<Viaje> lista = new ListaEnlazada<>();
         ListaEnlazada<Viaje> listado = listar();
         for (int i = 0; i < listado.size(); i++) {
             Viaje aux = listado.get(i);
-            if (aux.getId_pais().equals(id_Pais)) {
+            if (aux.getIdPais().equals(id)) {
                 lista.insertar(aux);
             }
         }

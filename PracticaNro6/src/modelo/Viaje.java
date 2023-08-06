@@ -16,6 +16,7 @@ public class Viaje {
     private Integer idPais; //origen del viaje
     private String nroViaje; // destino del viaje
     private Double distancia;
+    private Date fecha;
     private TipoViaje tipo;
 
     public Integer getId() {
@@ -48,6 +49,14 @@ public class Viaje {
 
     public void setDistancia(Double distancia) {
         this.distancia = distancia;
+    }
+
+    public Date getFecha() {
+        return fecha;
+    }
+
+    public void setFecha(Date fecha) {
+        this.fecha = fecha;
     }
 
     public TipoViaje getTipo() {

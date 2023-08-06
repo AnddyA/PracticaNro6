@@ -4,8 +4,8 @@
             "info": {
                 "@class": "modelo.Viaje",
                 "id": 1,
-                "idPais": 4,
-                "nroViaje": 454545,
+                "idPais": 1,
+                "nroViaje": 404040,
                 "distancia": 875.5,
                 "tipo": "Valido"
             },
@@ -85,10 +85,40 @@
                                                 "info": {
                                                     "@class": "modelo.Viaje",
                                                     "id": 10,
-                                                    "idPais": 6,
+                                                    "idPais": 3,
                                                     "nroViaje": 858585,
                                                     "distancia": 487,
                                                     "tipo": "Valido"
+                                                },
+                                                "sig": {
+                                                    "info": {
+                                                        "@class": "modelo.Viaje",
+                                                        "id": 11,
+                                                        "idPais": 4,
+                                                        "nroViaje": 444333,
+                                                        "distancia": 896,
+                                                        "tipo": "Valido"
+                                                    },
+                                                    "sig": {
+                                                        "info": {
+                                                            "@class": "modelo.Viaje",
+                                                            "id": 12,
+                                                            "idPais": 7,
+                                                            "nroViaje": 434343,
+                                                            "distancia": 912.05,
+                                                            "tipo": "Valido"
+                                                        },
+                                                        "sig": {
+                                                            "info": {
+                                                                "@class": "modelo.Viaje",
+                                                                "id": 13,
+                                                                "idPais": 2,
+                                                                "nroViaje": 101010,
+                                                                "distancia": 325.8,
+                                                                "tipo": "Valido"
+                                                            }
+                                                        }
+                                                    }
                                                 }
                                             }
                                         }
@@ -100,6 +130,6 @@
                 }
             }
         },
-        "size": 10
+        "size": 13
     }
 }

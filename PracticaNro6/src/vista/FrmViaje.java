@@ -6,10 +6,12 @@ package vista;
 
 import controlador.Dao.Grafo.PaisGrafo;
 import controlador.Dao.PaisDao;
+import controlador.ed.lista.ListaEnlazada;
 import controlador.ed.lista.exception.PosicionException;
 import controlador.ed.lista.exception.VacioException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.JOptionPane;
 import modelo.tabla.ModeloTablaViaje;
 import vista.utilidadesGrafo.Utilidades;
 
@@ -32,6 +34,7 @@ public class FrmViaje extends java.awt.Dialog {
         cargarTabla();
         cargarCombo();
         setLocationRelativeTo(null);
+
     }
 
     public void cargarTabla() {
@@ -47,6 +50,17 @@ public class FrmViaje extends java.awt.Dialog {
         } catch (Exception ex) {
         }
     }
+
+    public void buscarCaminoBellman() {
+    try {
+        ListaEnlazada lista = pg.bellmanFord(Utilidades.obtenerCombo(pg.getLista(), cbxOrigen),
+                Utilidades.obtenerCombo(pg.getLista(), cbxDestino));
+        lista.imprimir();
+    } catch (Exception e) {
+        e.printStackTrace();
+        JOptionPane.showMessageDialog(null, "Ha ocurrido un error al calcular el camino.", "Error", JOptionPane.ERROR_MESSAGE);
+    }
+}
 
     public void abrirGrafo() {
         new FrmGrafo(null, true, pg.getGrafo()).setVisible(true);
@@ -70,6 +84,7 @@ public class FrmViaje extends java.awt.Dialog {
         jLabel3 = new javax.swing.JLabel();
         cbxDestino = new javax.swing.JComboBox<>();
         cbxOrigen = new javax.swing.JComboBox<>();
+        btnBellman = new javax.swing.JButton();
         jPanel17 = new javax.swing.JPanel();
         jScrollPane2 = new javax.swing.JScrollPane();
         tblTabla = new javax.swing.JTable();
@@ -104,6 +119,13 @@ public class FrmViaje extends java.awt.Dialog {
 
         cbxOrigen.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 
+        btnBellman.setText("jButton2");
+        btnBellman.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnBellmanActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel16Layout = new javax.swing.GroupLayout(jPanel16);
         jPanel16.setLayout(jPanel16Layout);
         jPanel16Layout.setHorizontalGroup(
@@ -116,16 +138,18 @@ public class FrmViaje extends java.awt.Dialog {
                 .addGap(24, 24, 24)
                 .addGroup(jPanel16Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addGroup(jPanel16Layout.createSequentialGroup()
-                        .addComponent(jLabel3)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(cbxDestino, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addGroup(jPanel16Layout.createSequentialGroup()
                         .addComponent(jLabel2)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(cbxOrigen, javax.swing.GroupLayout.PREFERRED_SIZE, 237, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel16Layout.createSequentialGroup()
                         .addGap(75, 75, 75)
-                        .addComponent(jLabel1)))
+                        .addComponent(jLabel1))
+                    .addGroup(jPanel16Layout.createSequentialGroup()
+                        .addComponent(jLabel3)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(jPanel16Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(btnBellman)
+                            .addComponent(cbxDestino, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel16Layout.setVerticalGroup(
@@ -145,7 +169,9 @@ public class FrmViaje extends java.awt.Dialog {
                         .addGroup(jPanel16Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel3)
                             .addComponent(cbxDestino, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(0, 102, Short.MAX_VALUE)))
+                        .addGap(29, 29, 29)
+                        .addComponent(btnBellman)
+                        .addGap(0, 51, Short.MAX_VALUE)))
                 .addContainerGap())
         );
 
@@ -230,6 +256,10 @@ public class FrmViaje extends java.awt.Dialog {
         abrirGrafo();
     }//GEN-LAST:event_btnGrafo7ActionPerformed
 
+    private void btnBellmanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBellmanActionPerformed
+        buscarCaminoBellman();
+    }//GEN-LAST:event_btnBellmanActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -249,6 +279,7 @@ public class FrmViaje extends java.awt.Dialog {
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnBellman;
     private javax.swing.JButton btnGrafo7;
     private javax.swing.JComboBox<String> cbxDestino;
     private javax.swing.JComboBox<String> cbxOrigen;

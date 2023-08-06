@@ -4,6 +4,7 @@
  */
 package controlador.ed.lista;
 
+import controlador.Dao.Grafo.PaisGrafo;
 import controlador.ed.lista.exception.PosicionException;
 import controlador.ed.lista.exception.VacioException;
 
@@ -14,6 +15,9 @@ import controlador.ed.lista.exception.VacioException;
 public class ListaEnlazada<E> {
 
     private NodoLista<E> cabecera;
+    private NodoLista<PaisGrafo> rear;
+    private NodoLista<PaisGrafo> front;
+    
     private Integer size = 0;
 
     public NodoLista getCabecera() {
@@ -55,10 +59,13 @@ public class ListaEnlazada<E> {
             throw new VacioException();
         } else {
             NodoLista<E> aux = cabecera;
+            System.out.println("-------------------");
             for (int i = 0; i < size(); i++) {
                 System.out.println(aux.getInfo() + " ");
                 aux = aux.getSig();
             }
+            System.out.println(" ");
+            System.out.println("-------------------");
         }
     }
 
@@ -203,4 +210,30 @@ public class ListaEnlazada<E> {
             }
         }
     }
+    
+    //---------------------------
+//    public void offer(PaisGrafo element) {
+//        NodoLista<PaisGrafo> nuevo = new NodoLista<>(element, null);
+//        if (isEmpty()) {
+//            front = nuevo;
+//            rear = nuevo;
+//        } else {
+//            rear.setSig(nuevo);
+//            rear = nuevo;
+//        }
+//        size++;
+//    }
+//
+//    public E poll() throws VacioException {
+//        if (isEmpty()) {
+//            throw new VacioException("Queue is empty");
+//        }
+//        E element = cabecera.getInfo();
+//        cabecera = cabecera.getSig();
+//        size--;
+//        if (isEmpty()) {
+//            rear = null;
+//        }
+//        return element;
+//    }
 }

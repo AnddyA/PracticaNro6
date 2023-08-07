@@ -5,10 +5,7 @@
  */
 package controlador.ed.grafo;
 
-/**
- *
- * @author darkangel
- */
+
 public class Main {
     public static void main(String[] args) {
 //        GrafoND g = new GrafoND(6);
@@ -26,9 +23,9 @@ public class Main {
 //        }
 //        
 //        try {
-//            GrafoEtiquetadoND<Marca> ged = new GrafoEtiquetadoND<>(5);
+//            GrafoEtiquetadoD<Viaje> ged = new GrafoEtiquetadoND<>(5);
 //            
-//            ged.etiquetarVertice(1, new Marca(1, "Marilyn", true));
+//            ged.etiquetarVertice(1, new Viaje(1, "Marilyn", true));
 //            ged.etiquetarVertice(2, new Marca(1, "Cobos", true));
 //            ged.etiquetarVertice(3, new Marca(1, "Alice", true));
 //            ged.etiquetarVertice(4, new Marca(1, "Pool", true));
@@ -39,11 +36,11 @@ public class Main {
 //            ged.insertarAristaE(ged.getEtiqueta(2), ged.getEtiqueta(1));
 //            ged.insertarAristaE(ged.getEtiqueta(4), ged.getEtiqueta(1));
 //            System.out.println(ged.toString());
-//            //System.out.println(ged.getEtiqueta(1));
+//            System.out.println(ged.getEtiqueta(1));
 //        } catch (Exception e) {
 //            System.out.println("error en GE "+e);
 //        }
-        
+//        
         //clases
         //Persona
         //id

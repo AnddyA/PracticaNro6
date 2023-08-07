@@ -10,10 +10,7 @@ import controlador.ed.lista.exception.VacioException;
 import javax.swing.JComboBox;
 import modelo.Pais;
 
-/**
- *
- * @author apolo
- */
+
 public class Utilidades {
 
     public static void cargarCombo(ListaEnlazada<Pais> lista, JComboBox cbx) throws VacioException, PosicionException {

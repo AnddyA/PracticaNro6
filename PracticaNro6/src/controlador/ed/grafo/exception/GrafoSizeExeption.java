@@ -5,10 +5,6 @@
  */
 package controlador.ed.grafo.exception;
 
-/**
- *
- * @author darkangel
- */
 public class GrafoSizeExeption extends Exception {
 
     public GrafoSizeExeption(String msg) {

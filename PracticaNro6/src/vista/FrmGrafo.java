@@ -20,10 +20,7 @@ import controlador.ed.grafo.GrafoEtiquetadoD;
 import controlador.ed.lista.ListaEnlazada;
 import java.awt.Dimension;
 
-/**
- *
- * @author darkangel
- */
+
 public class FrmGrafo extends javax.swing.JDialog {
 
     private Grafo grafo;
@@ -59,7 +56,7 @@ public class FrmGrafo extends javax.swing.JDialog {
     private void cargarDatos(Integer tipo) {
         mxGraph graph = new mxGraph();
         mxGraphComponent graphComponent = new mxGraphComponent(graph);
-        graphComponent.setSize(new Dimension(1500, 1500));
+        graphComponent.setSize(new Dimension(1525, 780));
         getContentPane().add(graphComponent);
         ListaEnlazada<Object> pintados = new ListaEnlazada<>();
         Object parent = graph.getDefaultParent();
@@ -125,11 +122,11 @@ public class FrmGrafo extends javax.swing.JDialog {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 700, Short.MAX_VALUE)
+            .addGap(0, 1600, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 700, Short.MAX_VALUE)
+            .addGap(0, 800, Short.MAX_VALUE)
         );
 
         pack();

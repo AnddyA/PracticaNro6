@@ -4,10 +4,7 @@
  */
 package controlador.ed.lista;
 
-/**
- *
- * @author andy
- */
+
 public class NodoLista<E> {
     private E info; //dato generico
     private NodoLista sig; // referencia al seguiente nodo

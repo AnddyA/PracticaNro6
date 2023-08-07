@@ -5,14 +5,10 @@
  */
 package controlador.ed.grafo;
 
-import controlador.Dao.Grafo.PaisGrafo;
 import controlador.ed.grafo.exception.GrafoSizeExeption;
 import controlador.ed.lista.ListaEnlazada;
 
-/**
- *
- * @author darkangel
- */
+
 public class GrafoD extends Grafo {
 
     protected Integer numV;
@@ -97,7 +93,8 @@ public class GrafoD extends Grafo {
             throw new GrafoSizeExeption();
         }
     }
-    
+
+    @Override
     public ListaEnlazada<Adycencia> adycentes(Integer i) {
         return listaAdycencia[i];
     }

@@ -7,10 +7,7 @@ package controlador.ed.grafo;
 
 import controlador.ed.grafo.exception.GrafoSizeExeption;
 
-/**
- *
- * @author darkangel
- */
+
 public class GrafoEtiquetadoND<E> extends GrafoEtiquetadoD<E>{
 
     public GrafoEtiquetadoND(Integer numV) {

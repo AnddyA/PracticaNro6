@@ -16,10 +16,7 @@ import java.util.Map;
 import modelo.Pais;
 import modelo.Viaje;
 
-/**
- *
- * @author andy
- */
+
 public class PaisGrafo {
 
     private GrafoEtiquetadoD<Pais> grafo;
@@ -74,14 +71,15 @@ public class PaisGrafo {
                     }
                 }
                 for (Map.Entry<String, Double> entry : mapa.entrySet()) {
-                    Pais aux = getPais(entry.getKey());
-                    if (aux != null) {
-                        System.out.println(aux);
-                        grafo.insertarAristaE(pais, aux, entry.getValue());
+                    String nroViajeDestino = entry.getKey();
+                    Double distancia = entry.getValue();
+                    Pais paisDestino = getPais(nroViajeDestino);
+                    if (paisDestino != null) {
+                        System.out.println(paisDestino);
+                        grafo.insertarAristaE(pais, paisDestino, distancia);
                     }
                 }
             }
-
         } catch (Exception e) {
             System.out.println("Error de llenado: " + e);
             e.printStackTrace();
@@ -99,88 +97,160 @@ public class PaisGrafo {
         return aux;
     }
 
-//    public ListaEnlazada<Pais> bellmanFord(Pais inicio, Pais destino) throws VacioException, PosicionException {
-//        Integer vertices = grafo.numVertices();
-//        ListaEnlazada<Pais> caminoCorto = new ListaEnlazada<>();
-//        ListaEnlazada<Integer> ListaP = grafo.camin0(grafo.getVerticeNum(inicio), grafo.getVerticeNum(destino));
-//        System.out.println(ListaP.size());
-//        
-//        // Inicializar las distancias a infinito y los padres a -1
-//        for (int i = 1; i <= ListaP.size(); i++) {
-//            caminoCorto.insertar(grafo.getEtiqueta(ListaP.get(i)));
-//        }
-//
-//        // Obtener el índice de los vértices de inicio y destino
-//        Integer inicioIndex = grafo.getVerticeNum(inicio);
-//        Integer destinoIndex = grafo.getVerticeNum(destino);
-//        ListaP.update(inicioIndex - 1, 0); // La distancia al inicio es 0
-//
-//        // Relajar las aristas repetidamente V-1 veces
-//        for (int i = 1; i < vertices; i++) {
-//            for (int j = 1; j <= vertices; j++) {
-//                ListaEnlazada<Adycencia> adycentes = grafo.adyacentesGE(grafo.getEtiqueta(j));
-//                for (int k = 0; k < adycentes.size(); k++) {
-//                    Adycencia ady = adycentes.get(k);
-//                    int v = ady.getDestino();
-//                    int pesoUV = (int) ady.getPeso();
-//
-//                    if (ListaP.get(j - 1) + pesoUV < ListaP.get(v - 1)) {
-//                        ListaP.update(v - 1, ListaP.get(j - 1) + pesoUV);
-//                        ListaP.update(v - 1, j);
-//                    }
-//                }
-//            }
-//        }
-//
-//        // Reconstruir el camino más corto
-//        int current = destinoIndex;
-//        while (current != -1) {
-//            caminoCorto.insertarInicio(grafo.getEtiqueta(current));
-//            current = ListaP.get(current - 1);
-//        }
-//        return caminoCorto;
-//    }
-    public ListaEnlazada<Pais> bellmanFord(Pais origen, Pais destino) throws VacioException, PosicionException {
-        System.out.println(grafo.getVerticeNum(origen) + "   " + grafo.getVerticeNum(destino));
-        Integer vertices = grafo.numVertices();
-        ListaEnlazada<Pais> caminoCorto = new ListaEnlazada<>();
-        ListaEnlazada<Integer> distancias = new ListaEnlazada<>();
-        ListaEnlazada<Integer> padres = new ListaEnlazada<>();
+    //------------Calcular camino mas corto "Metodo Floyd"---------
+    
+    public ListaEnlazada<Pais> calcularCaminoMinimoFloyd(Pais origen, Pais destino) throws VacioException, PosicionException {
+        int n = lista.size();
+        HashMap<Pais, Integer> indiceMap = new HashMap<>();
+        int indice = 1;
 
-        //-------Inicializar las distancias a infinito y los padres a -1
-        for (int i = 1; i <= vertices; i++) {
-            distancias.insertar(Integer.MAX_VALUE);
-            padres.insertar(-1);
+        for (int i = 0; i < lista.size(); i++) {
+            Pais pais = lista.get(i);
+            indiceMap.put(pais, indice);
+            indice++;
         }
 
-        //-------Obtener el índice de los vértices de origen y destino
-        Integer inicioIndex = grafo.getVerticeNum(origen);
-        Integer destinoIndex = grafo.getVerticeNum(destino);
-        distancias.update(inicioIndex - 1, 0); // La distancia al inicio es 0
+        double[][] distancias = new double[n + 1][n + 1];
+        int[][] intermedios = new int[n + 1][n + 1];
 
-        //-------Relajar las aristas repetidamente V-1 veces
-        for (int i = 1; i < vertices; i++) {
-            for (int j = 1; j <= vertices; j++) {
-                ListaEnlazada<Adycencia> adycentes = grafo.adyacentesGE(grafo.getEtiqueta(j));
-                for (int k = 0; k < adycentes.size(); k++) {
-                    Adycencia ady = adycentes.get(k);
-                    int v = ady.getDestino();
-                    int pesoUV = (int) ady.getPeso();
+        for (int i = 1; i <= n; i++) {
+            for (int j = 1; j <= n; j++) {
+                distancias[i][j] = Double.POSITIVE_INFINITY;
+                intermedios[i][j] = -1;
+            }
+        }
 
-                    if (distancias.get(j - 1) + pesoUV < distancias.get(v - 1)) {
-                        distancias.update(v - 1, distancias.get(j - 1) + pesoUV);
-                        padres.update(v - 1, j);
+        for (int i = 1; i <= n; i++) {
+            distancias[i][i] = 0;
+            Pais pais = lista.get(i - 1);
+            ListaEnlazada<Viaje> listaV = new ViajeDao().listaPorPais(pais.getId());
+            for (int j = 0; j < listaV.size(); j++) {
+                Viaje viaje = listaV.get(j);
+                Pais destinoPais = getPaisPorNroViaje(viaje.getNroViaje());
+                if (destinoPais != null) {
+                    distancias[i][indiceMap.get(destinoPais)] = viaje.getDistancia();
+                    intermedios[i][indiceMap.get(destinoPais)] = i;
+                }
+            }
+        }
+        for (int k = 1; k <= n; k++) {
+            for (int i = 1; i <= n; i++) {
+                for (int j = 1; j <= n; j++) {
+                    double distanciaIK = distancias[i][k];
+                    double distanciaKJ = distancias[k][j];
+
+                    if (distanciaIK != Double.POSITIVE_INFINITY && distanciaKJ != Double.POSITIVE_INFINITY) {
+                        double distanciaIJ = distancias[i][j];
+                        double nuevaDistancia = distanciaIK + distanciaKJ;
+
+                        if (nuevaDistancia < distanciaIJ) {
+                            distancias[i][j] = nuevaDistancia;
+                            intermedios[i][j] = intermedios[k][j];
+                        }
+                    }
+                }
+            }
+        }
+        ListaEnlazada<Pais> caminoMinimo = reconstruirCamino(indiceMap.get(origen), indiceMap.get(destino), intermedios);
+
+        if (caminoMinimo.isEmpty()) {
+            System.out.println("\nNO EXISTE UN CAMINO MINIMO ENTRE " + origen.getNombre() + " Y " + destino.getNombre());
+        } else {
+            System.out.println("\nCAMINO MINIMO POR FLOYD ENTRE " + origen.getNombre() + " Y " + destino.getNombre() + ":");
+            for (int i = 0; i < caminoMinimo.size(); i++) {
+                System.out.println(caminoMinimo.get(i));
+            }
+        }
+
+        return caminoMinimo;
+    }
+
+    private ListaEnlazada<Pais> reconstruirCamino(int origen, int destino, int[][] intermedios) throws VacioException, PosicionException {
+        ListaEnlazada<Pais> camino = new ListaEnlazada<>();
+        if (intermedios[origen][destino] == -1) {
+            return camino;
+        }
+        camino.insertarAlInicio(lista.get(destino - 1));
+        while (origen != destino) {
+            destino = intermedios[origen][destino];
+            camino.insertarAlInicio(lista.get(destino - 1));
+        }
+        return camino;
+    }
+
+    private Pais getPaisPorNroViaje(String nroViaje) throws VacioException, PosicionException {
+        for (int i = 0; i < lista.size(); i++) {
+            Pais pais = lista.get(i);
+            if (pais.getNro_viaje().equals(nroViaje)) {
+                return pais;
+            }
+        }
+        return null;
+    }
+    
+    //------------Calcular camino mas corto "Metodo BellmanFord"---------
+
+    
+    public ListaEnlazada<Pais> bellmanFord(Pais origen, Pais destino) throws VacioException, PosicionException{
+        HashMap<Pais, Double> distancias = new HashMap<>();
+        HashMap<Pais, Pais> siguiente = new HashMap<>();
+        ListaEnlazada<Pais> camino = new ListaEnlazada<>();
+
+        // Inicializar las distancias con infinito excepto para el vértice origen
+        for (int i = 1; i <= grafo.numVertices(); i++) {
+            Pais pais = grafo.getEtiqueta(i);
+            if (pais.equals(origen)) {
+                distancias.put(pais, 0.0);
+            } else {
+                distancias.put(pais, Double.MAX_VALUE);
+            }
+        }
+
+        // Relajar las aristas V - 1 veces (donde V es el número de vértices)
+        for (int v = 1; v <= grafo.numVertices() - 1; v++) {
+            for (int i = 1; i <= grafo.numVertices(); i++) {
+                Pais paisI = grafo.getEtiqueta(i);
+                ListaEnlazada<Adycencia> adycentes = grafo.adyacentesGE(grafo.getEtiqueta(i));
+                for (int j = 0; j < adycentes.size(); j++) {
+                    Adycencia ady = adycentes.get(j);
+                    Pais paisJ = grafo.getEtiqueta(ady.getDestino());
+
+                    if (distancias.get(paisI) + ady.getPeso() < distancias.get(paisJ)) {
+                        distancias.put(paisJ, distancias.get(paisI) + ady.getPeso());
+                        siguiente.put(paisJ, paisI);
                     }
                 }
             }
         }
 
-         //-------Reconstruir el camino más corto
-        
-        while (destinoIndex != -1) {
-            caminoCorto.insertarInicio(grafo.getEtiqueta(destinoIndex));
-            destinoIndex = padres.get(destinoIndex - 1);
+        // Construir el camino más corto desde el origen al destino
+        ListaEnlazada<Pais> caminoMinimo = reconstruirCamino(destino, origen, siguiente, camino);
+
+        if (caminoMinimo.isEmpty()) {
+            System.out.println("\nNO EXISTE CAMINO ENTRE " + origen.getNombre() + " - " + destino.getNombre());
+        } else {
+            System.out.println("\nCAMINO POR BELLMANFORD ENTRE " + origen.getNombre() + " - " + destino.getNombre() + ":");
+            for (int i = 0; i < caminoMinimo.size(); i++) {
+                System.out.println(caminoMinimo.get(i));
+            }
         }
-        return caminoCorto;
+
+        return camino;
     }
+    
+    public ListaEnlazada<Pais> reconstruirCamino(Pais destino, Pais origen, HashMap<Pais, Pais> siguiente, ListaEnlazada<Pais> camino){
+        
+        while (destino != null && !destino.equals(origen)) {
+            camino.insertarInicio(destino);
+            destino = siguiente.get(destino);
+        }
+        if (destino != null) {
+            camino.insertarInicio(origen);
+        } else {
+            // Si el destino no es alcanzable desde el origen, se limpia la lista
+            camino.deleteAll();
+        }
+        return camino;
+    }
+
 }

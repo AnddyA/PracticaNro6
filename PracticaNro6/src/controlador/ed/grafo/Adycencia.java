@@ -5,10 +5,6 @@
  */
 package controlador.ed.grafo;
 
-/**
- *
- * @author darkangel
- */
 public class Adycencia {
     private Integer destino;
     private double peso;

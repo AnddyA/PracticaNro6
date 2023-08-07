@@ -7,10 +7,7 @@ package controlador.ed.grafo;
 
 import controlador.ed.grafo.exception.GrafoSizeExeption;
 
-/**
- *
- * @author darkangel
- */
+
 public class GrafoND extends GrafoD {
 
     public GrafoND(Integer numV) {

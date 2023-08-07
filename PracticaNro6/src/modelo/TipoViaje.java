@@ -4,10 +4,6 @@
  */
 package modelo;
 
-/**
- *
- * @author apolo
- */
 public enum TipoViaje {
     NoValido, Valido
 }

@@ -4,10 +4,7 @@
  */
 package modelo;
 
-/**
- *
- * @author andy
- */
+
 public class Pais {
 
     private Integer id;
@@ -16,6 +13,18 @@ public class Pais {
     private String nroPais;
     private Boolean estado;
 
+    public Pais() {
+    }
+
+    public Pais(Integer id, String nombre, String ciudad, String nroPais, Boolean estado) {
+        this.id = id;
+        this.nombre = nombre;
+        this.ciudad = ciudad;
+        this.nroPais = nroPais;
+        this.estado = estado;
+    }
+
+    
     public Integer getId() {
         return id;
     }

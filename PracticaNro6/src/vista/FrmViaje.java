@@ -59,7 +59,8 @@ public class FrmViaje extends java.awt.Dialog {
 
                 long startTime = System.currentTimeMillis();
 
-                ListaEnlazada lista = pg.bellmanFord(origen, destino);
+                ListaEnlazada<Pais> lista = new ListaEnlazada();
+                lista = pg.bellmanFord(origen, destino);
 
                 long endTime = System.currentTimeMillis();
                 long Time = endTime - startTime;

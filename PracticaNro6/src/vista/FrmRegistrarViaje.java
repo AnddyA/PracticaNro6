@@ -53,6 +53,11 @@ public class FrmRegistrarViaje extends javax.swing.JDialog {
         } catch (Exception ex) {
         }
     }
+    
+    public void limpiar(){
+        txtDistancia.setText("");
+        cargarTabla();
+    }
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -90,6 +95,11 @@ public class FrmRegistrarViaje extends javax.swing.JDialog {
         cbxOrigen.setBackground(new java.awt.Color(102, 102, 102));
         cbxOrigen.setForeground(new java.awt.Color(255, 255, 255));
         cbxOrigen.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        cbxOrigen.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cbxOrigenActionPerformed(evt);
+            }
+        });
 
         cbxDestino.setBackground(new java.awt.Color(102, 102, 102));
         cbxDestino.setForeground(new java.awt.Color(255, 255, 255));
@@ -198,6 +208,10 @@ public class FrmRegistrarViaje extends javax.swing.JDialog {
         }
     }//GEN-LAST:event_jButton1ActionPerformed
 
+    private void cbxOrigenActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbxOrigenActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_cbxOrigenActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -213,6 +227,7 @@ public class FrmRegistrarViaje extends javax.swing.JDialog {
             vd.getViaje().setDistancia(Double.parseDouble(txtDistancia.getText()));
             vd.getViaje().setTipo(TipoViaje.Valido);
             vd.guardar();
+            limpiar();
 
             JOptionPane.showMessageDialog(null, "GUARDADO");
         }

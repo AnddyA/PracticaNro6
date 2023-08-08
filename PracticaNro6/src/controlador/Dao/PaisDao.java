@@ -40,10 +40,6 @@ public class PaisDao extends AdaptadorDao<Pais> {
         this.guardar(pais);
     }
     
-    public void modificar(Integer pos) throws VacioException, PosicionException, IOException {
-        this.modificar(pais, pos);
-    }
-    
     private Integer generateID() {
         return listar().size() + 1;
     }

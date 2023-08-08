@@ -10,7 +10,7 @@ public class Viaje {
 
     private Integer id;
     private Integer idPais; //origen del viaje
-    private String nroViaje; // destino del viaje
+    private String nroPais; // destino del viaje
     private Double distancia;
     private TipoViaje tipo;
 
@@ -31,11 +31,11 @@ public class Viaje {
     }
 
     public String getNroViaje() {
-        return nroViaje;
+        return nroPais;
     }
 
     public void setNroViaje(String nroViaje) {
-        this.nroViaje = nroViaje;
+        this.nroPais = nroViaje;
     }
 
     public Double getDistancia() {
@@ -56,7 +56,7 @@ public class Viaje {
 
     @Override
     public String toString() {
-        return "Viaje{" + "idPais=" + idPais + ", nroViaje=" + nroViaje + ", distancia=" + distancia + '}';
+        return "Viaje{" + "idPais=" + idPais + ", nroViaje=" + nroPais + ", distancia=" + distancia + '}';
     }
     
 

@@ -38,11 +38,6 @@ public class ViajeDao extends AdaptadorDao<Viaje> {
         this.guardar(viaje);
     }
 
-    public void modificar(Integer pos) throws IOException, VacioException, PosicionException {
-
-        this.modificar(viaje, pos);
-    }
-
     private Integer generateId() {
         return listar().size() + 1;
     }

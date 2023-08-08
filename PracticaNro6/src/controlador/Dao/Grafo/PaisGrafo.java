@@ -73,12 +73,11 @@ public class PaisGrafo {
                     }
                 }
                 for (Map.Entry<String, Double> entry : mapa.entrySet()) {
-                    String nroViajeDestino = entry.getKey();
                     Double distancia = entry.getValue();
-                    Pais paisDestino = getPais(nroViajeDestino);
-                    if (paisDestino != null) {
-                        System.out.println(paisDestino);
-                        grafo.insertarAristaE(pais, paisDestino, distancia);
+                    Pais aux = getPais(entry.getKey());
+                    if (aux != null) {
+                        System.out.println(aux);
+                        grafo.insertarAristaE(pais, aux, distancia);
                     }
                 }
             }

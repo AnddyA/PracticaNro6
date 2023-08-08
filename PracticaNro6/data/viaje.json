@@ -5,8 +5,8 @@
                 "@class": "modelo.Viaje",
                 "id": 1,
                 "idPais": 1,
-                "nroViaje": 2,
-                "distancia": 12,
+                "nroPais": 2,
+                "distancia": 453.01,
                 "tipo": "Valido"
             },
             "sig": {
@@ -14,7 +14,7 @@
                     "@class": "modelo.Viaje",
                     "id": 2,
                     "idPais": 5,
-                    "nroViaje": 1,
+                    "nroPais": 28,
                     "distancia": 1200,
                     "tipo": "Valido"
                 },
@@ -23,7 +23,7 @@
                         "@class": "modelo.Viaje",
                         "id": 3,
                         "idPais": 1,
-                        "nroViaje": 7,
+                        "nroPais": 7,
                         "distancia": 1280,
                         "tipo": "Valido"
                     },
@@ -32,7 +32,7 @@
                             "@class": "modelo.Viaje",
                             "id": 4,
                             "idPais": 1,
-                            "nroViaje": 2,
+                            "nroPais": 16,
                             "distancia": 12000,
                             "tipo": "Valido"
                         },
@@ -41,7 +41,7 @@
                                 "@class": "modelo.Viaje",
                                 "id": 5,
                                 "idPais": 2,
-                                "nroViaje": 3,
+                                "nroPais": 3,
                                 "distancia": 1200,
                                 "tipo": "Valido"
                             },
@@ -50,7 +50,7 @@
                                     "@class": "modelo.Viaje",
                                     "id": 6,
                                     "idPais": 3,
-                                    "nroViaje": 4,
+                                    "nroPais": 4,
                                     "distancia": 1500.3,
                                     "tipo": "Valido"
                                 },
@@ -59,7 +59,7 @@
                                         "@class": "modelo.Viaje",
                                         "id": 7,
                                         "idPais": 4,
-                                        "nroViaje": 10,
+                                        "nroPais": 10,
                                         "distancia": 1309,
                                         "tipo": "Valido"
                                     },
@@ -68,7 +68,7 @@
                                             "@class": "modelo.Viaje",
                                             "id": 8,
                                             "idPais": 9,
-                                            "nroViaje": 3,
+                                            "nroPais": 3,
                                             "distancia": 20000.89,
                                             "tipo": "Valido"
                                         },
@@ -77,7 +77,7 @@
                                                 "@class": "modelo.Viaje",
                                                 "id": 9,
                                                 "idPais": 5,
-                                                "nroViaje": 1,
+                                                "nroPais": 1,
                                                 "distancia": 2000.2,
                                                 "tipo": "Valido"
                                             },
@@ -86,7 +86,7 @@
                                                     "@class": "modelo.Viaje",
                                                     "id": 10,
                                                     "idPais": 6,
-                                                    "nroViaje": 4,
+                                                    "nroPais": 4,
                                                     "distancia": 30000.3,
                                                     "tipo": "Valido"
                                                 },
@@ -95,7 +95,7 @@
                                                         "@class": "modelo.Viaje",
                                                         "id": 11,
                                                         "idPais": 8,
-                                                        "nroViaje": 2,
+                                                        "nroPais": 23,
                                                         "distancia": 35000.3,
                                                         "tipo": "Valido"
                                                     },
@@ -104,7 +104,7 @@
                                                             "@class": "modelo.Viaje",
                                                             "id": 12,
                                                             "idPais": 2,
-                                                            "nroViaje": 7,
+                                                            "nroPais": 7,
                                                             "distancia": 34567,
                                                             "tipo": "Valido"
                                                         },
@@ -113,7 +113,7 @@
                                                                 "@class": "modelo.Viaje",
                                                                 "id": 13,
                                                                 "idPais": 8,
-                                                                "nroViaje": 5,
+                                                                "nroPais": 5,
                                                                 "distancia": 13577,
                                                                 "tipo": "Valido"
                                                             },
@@ -122,7 +122,7 @@
                                                                     "@class": "modelo.Viaje",
                                                                     "id": 14,
                                                                     "idPais": 11,
-                                                                    "nroViaje": 1,
+                                                                    "nroPais": 1,
                                                                     "distancia": 12300.9,
                                                                     "tipo": "Valido"
                                                                 },
@@ -131,7 +131,7 @@
                                                                         "@class": "modelo.Viaje",
                                                                         "id": 15,
                                                                         "idPais": 12,
-                                                                        "nroViaje": 6,
+                                                                        "nroPais": 6,
                                                                         "distancia": 16300.9,
                                                                         "tipo": "Valido"
                                                                     },
@@ -140,7 +140,7 @@
                                                                             "@class": "modelo.Viaje",
                                                                             "id": 16,
                                                                             "idPais": 13,
-                                                                            "nroViaje": 2,
+                                                                            "nroPais": 2,
                                                                             "distancia": 12900,
                                                                             "tipo": "Valido"
                                                                         },
@@ -149,7 +149,7 @@
                                                                                 "@class": "modelo.Viaje",
                                                                                 "id": 17,
                                                                                 "idPais": 14,
-                                                                                "nroViaje": 5,
+                                                                                "nroPais": 5,
                                                                                 "distancia": 3470,
                                                                                 "tipo": "Valido"
                                                                             },
@@ -158,7 +158,7 @@
                                                                                     "@class": "modelo.Viaje",
                                                                                     "id": 18,
                                                                                     "idPais": 15,
-                                                                                    "nroViaje": 1,
+                                                                                    "nroPais": 1,
                                                                                     "distancia": 35470,
                                                                                     "tipo": "Valido"
                                                                                 },
@@ -167,7 +167,7 @@
                                                                                         "@class": "modelo.Viaje",
                                                                                         "id": 19,
                                                                                         "idPais": 16,
-                                                                                        "nroViaje": 20,
+                                                                                        "nroPais": 20,
                                                                                         "distancia": 389470,
                                                                                         "tipo": "Valido"
                                                                                     },
@@ -176,7 +176,7 @@
                                                                                             "@class": "modelo.Viaje",
                                                                                             "id": 20,
                                                                                             "idPais": 17,
-                                                                                            "nroViaje": 13,
+                                                                                            "nroPais": 13,
                                                                                             "distancia": 345470,
                                                                                             "tipo": "Valido"
                                                                                         },
@@ -185,7 +185,7 @@
                                                                                                 "@class": "modelo.Viaje",
                                                                                                 "id": 21,
                                                                                                 "idPais": 18,
-                                                                                                "nroViaje": 15,
+                                                                                                "nroPais": 15,
                                                                                                 "distancia": 74570,
                                                                                                 "tipo": "Valido"
                                                                                             },
@@ -194,7 +194,7 @@
                                                                                                     "@class": "modelo.Viaje",
                                                                                                     "id": 22,
                                                                                                     "idPais": 19,
-                                                                                                    "nroViaje": 4,
+                                                                                                    "nroPais": 4,
                                                                                                     "distancia": 34970.4,
                                                                                                     "tipo": "Valido"
                                                                                                 },
@@ -203,7 +203,7 @@
                                                                                                         "@class": "modelo.Viaje",
                                                                                                         "id": 23,
                                                                                                         "idPais": 20,
-                                                                                                        "nroViaje": 1,
+                                                                                                        "nroPais": 30,
                                                                                                         "distancia": 36770.9,
                                                                                                         "tipo": "Valido"
                                                                                                     },
@@ -212,7 +212,7 @@
                                                                                                             "@class": "modelo.Viaje",
                                                                                                             "id": 24,
                                                                                                             "idPais": 21,
-                                                                                                            "nroViaje": 1,
+                                                                                                            "nroPais": 1,
                                                                                                             "distancia": 12345.9,
                                                                                                             "tipo": "Valido"
                                                                                                         },
@@ -221,7 +221,7 @@
                                                                                                                 "@class": "modelo.Viaje",
                                                                                                                 "id": 25,
                                                                                                                 "idPais": 22,
-                                                                                                                "nroViaje": 3,
+                                                                                                                "nroPais": 3,
                                                                                                                 "distancia": 34567.98,
                                                                                                                 "tipo": "Valido"
                                                                                                             },
@@ -230,7 +230,7 @@
                                                                                                                     "@class": "modelo.Viaje",
                                                                                                                     "id": 26,
                                                                                                                     "idPais": 23,
-                                                                                                                    "nroViaje": 11,
+                                                                                                                    "nroPais": 11,
                                                                                                                     "distancia": 21345.98,
                                                                                                                     "tipo": "Valido"
                                                                                                                 },
@@ -239,7 +239,7 @@
                                                                                                                         "@class": "modelo.Viaje",
                                                                                                                         "id": 27,
                                                                                                                         "idPais": 24,
-                                                                                                                        "nroViaje": 7,
+                                                                                                                        "nroPais": 7,
                                                                                                                         "distancia": 2345.98,
                                                                                                                         "tipo": "Valido"
                                                                                                                     },
@@ -248,7 +248,7 @@
                                                                                                                             "@class": "modelo.Viaje",
                                                                                                                             "id": 28,
                                                                                                                             "idPais": 25,
-                                                                                                                            "nroViaje": 1,
+                                                                                                                            "nroPais": 1,
                                                                                                                             "distancia": 12345.8,
                                                                                                                             "tipo": "Valido"
                                                                                                                         },
@@ -257,7 +257,7 @@
                                                                                                                                 "@class": "modelo.Viaje",
                                                                                                                                 "id": 29,
                                                                                                                                 "idPais": 26,
-                                                                                                                                "nroViaje": 18,
+                                                                                                                                "nroPais": 18,
                                                                                                                                 "distancia": 12335.9,
                                                                                                                                 "tipo": "Valido"
                                                                                                                             },
@@ -266,7 +266,7 @@
                                                                                                                                     "@class": "modelo.Viaje",
                                                                                                                                     "id": 30,
                                                                                                                                     "idPais": 27,
-                                                                                                                                    "nroViaje": 19,
+                                                                                                                                    "nroPais": 19,
                                                                                                                                     "distancia": 12345.87,
                                                                                                                                     "tipo": "Valido"
                                                                                                                                 },
@@ -275,7 +275,7 @@
                                                                                                                                         "@class": "modelo.Viaje",
                                                                                                                                         "id": 31,
                                                                                                                                         "idPais": 28,
-                                                                                                                                        "nroViaje": 8,
+                                                                                                                                        "nroPais": 8,
                                                                                                                                         "distancia": 12345.87,
                                                                                                                                         "tipo": "Valido"
                                                                                                                                     },
@@ -284,7 +284,7 @@
                                                                                                                                             "@class": "modelo.Viaje",
                                                                                                                                             "id": 32,
                                                                                                                                             "idPais": 29,
-                                                                                                                                            "nroViaje": 2,
+                                                                                                                                            "nroPais": 2,
                                                                                                                                             "distancia": 12345.87,
                                                                                                                                             "tipo": "Valido"
                                                                                                                                         },
@@ -293,7 +293,7 @@
                                                                                                                                                 "@class": "modelo.Viaje",
                                                                                                                                                 "id": 33,
                                                                                                                                                 "idPais": 30,
-                                                                                                                                                "nroViaje": 29,
+                                                                                                                                                "nroPais": 29,
                                                                                                                                                 "distancia": 15432.67,
                                                                                                                                                 "tipo": "Valido"
                                                                                                                                             },
@@ -302,7 +302,7 @@
                                                                                                                                                     "@class": "modelo.Viaje",
                                                                                                                                                     "id": 34,
                                                                                                                                                     "idPais": 19,
-                                                                                                                                                    "nroViaje": 12,
+                                                                                                                                                    "nroPais": 12,
                                                                                                                                                     "distancia": 456.45,
                                                                                                                                                     "tipo": "Valido"
                                                                                                                                                 },
@@ -311,7 +311,7 @@
                                                                                                                                                         "@class": "modelo.Viaje",
                                                                                                                                                         "id": 35,
                                                                                                                                                         "idPais": 10,
-                                                                                                                                                        "nroViaje": 18,
+                                                                                                                                                        "nroPais": 18,
                                                                                                                                                         "distancia": 645.23,
                                                                                                                                                         "tipo": "Valido"
                                                                                                                                                     },
@@ -320,7 +320,7 @@
                                                                                                                                                             "@class": "modelo.Viaje",
                                                                                                                                                             "id": 36,
                                                                                                                                                             "idPais": 11,
-                                                                                                                                                            "nroViaje": 14,
+                                                                                                                                                            "nroPais": 14,
                                                                                                                                                             "distancia": 358,
                                                                                                                                                             "tipo": "Valido"
                                                                                                                                                         },
@@ -329,7 +329,7 @@
                                                                                                                                                                 "@class": "modelo.Viaje",
                                                                                                                                                                 "id": 37,
                                                                                                                                                                 "idPais": 10,
-                                                                                                                                                                "nroViaje": 21,
+                                                                                                                                                                "nroPais": 21,
                                                                                                                                                                 "distancia": 501,
                                                                                                                                                                 "tipo": "Valido"
                                                                                                                                                             },
@@ -338,7 +338,7 @@
                                                                                                                                                                     "@class": "modelo.Viaje",
                                                                                                                                                                     "id": 38,
                                                                                                                                                                     "idPais": 9,
-                                                                                                                                                                    "nroViaje": 22,
+                                                                                                                                                                    "nroPais": 22,
                                                                                                                                                                     "distancia": 600.02,
                                                                                                                                                                     "tipo": "Valido"
                                                                                                                                                                 },
@@ -347,7 +347,7 @@
                                                                                                                                                                         "@class": "modelo.Viaje",
                                                                                                                                                                         "id": 39,
                                                                                                                                                                         "idPais": 23,
-                                                                                                                                                                        "nroViaje": 25,
+                                                                                                                                                                        "nroPais": 25,
                                                                                                                                                                         "distancia": 756.22,
                                                                                                                                                                         "tipo": "Valido"
                                                                                                                                                                     },
@@ -356,7 +356,7 @@
                                                                                                                                                                             "@class": "modelo.Viaje",
                                                                                                                                                                             "id": 40,
                                                                                                                                                                             "idPais": 25,
-                                                                                                                                                                            "nroViaje": 24,
+                                                                                                                                                                            "nroPais": 24,
                                                                                                                                                                             "distancia": 945.12,
                                                                                                                                                                             "tipo": "Valido"
                                                                                                                                                                         },
@@ -365,7 +365,7 @@
                                                                                                                                                                                 "@class": "modelo.Viaje",
                                                                                                                                                                                 "id": 41,
                                                                                                                                                                                 "idPais": 14,
-                                                                                                                                                                                "nroViaje": 28,
+                                                                                                                                                                                "nroPais": 28,
                                                                                                                                                                                 "distancia": 745.24,
                                                                                                                                                                                 "tipo": "Valido"
                                                                                                                                                                             },
@@ -374,7 +374,7 @@
                                                                                                                                                                                     "@class": "modelo.Viaje",
                                                                                                                                                                                     "id": 42,
                                                                                                                                                                                     "idPais": 15,
-                                                                                                                                                                                    "nroViaje": 27,
+                                                                                                                                                                                    "nroPais": 27,
                                                                                                                                                                                     "distancia": 965,
                                                                                                                                                                                     "tipo": "Valido"
                                                                                                                                                                                 },
@@ -383,9 +383,59 @@
                                                                                                                                                                                         "@class": "modelo.Viaje",
                                                                                                                                                                                         "id": 43,
                                                                                                                                                                                         "idPais": 17,
-                                                                                                                                                                                        "nroViaje": 26,
+                                                                                                                                                                                        "nroPais": 26,
                                                                                                                                                                                         "distancia": 765.45,
                                                                                                                                                                                         "tipo": "Valido"
+                                                                                                                                                                                    },
+                                                                                                                                                                                    "sig": {
+                                                                                                                                                                                        "info": {
+                                                                                                                                                                                            "@class": "modelo.Viaje",
+                                                                                                                                                                                            "id": 44,
+                                                                                                                                                                                            "idPais": 1,
+                                                                                                                                                                                            "nroPais": 17,
+                                                                                                                                                                                            "distancia": 562.2,
+                                                                                                                                                                                            "tipo": "Valido"
+                                                                                                                                                                                        },
+                                                                                                                                                                                        "sig": {
+                                                                                                                                                                                            "info": {
+                                                                                                                                                                                                "@class": "modelo.Viaje",
+                                                                                                                                                                                                "id": 45,
+                                                                                                                                                                                                "idPais": 7,
+                                                                                                                                                                                                "nroPais": 9,
+                                                                                                                                                                                                "distancia": 453,
+                                                                                                                                                                                                "tipo": "Valido"
+                                                                                                                                                                                            },
+                                                                                                                                                                                            "sig": {
+                                                                                                                                                                                                "info": {
+                                                                                                                                                                                                    "@class": "modelo.Viaje",
+                                                                                                                                                                                                    "id": 46,
+                                                                                                                                                                                                    "idPais": 4,
+                                                                                                                                                                                                    "nroPais": 27,
+                                                                                                                                                                                                    "distancia": 756.25,
+                                                                                                                                                                                                    "tipo": "Valido"
+                                                                                                                                                                                                },
+                                                                                                                                                                                                "sig": {
+                                                                                                                                                                                                    "info": {
+                                                                                                                                                                                                        "@class": "modelo.Viaje",
+                                                                                                                                                                                                        "id": 47,
+                                                                                                                                                                                                        "idPais": 21,
+                                                                                                                                                                                                        "nroPais": 13,
+                                                                                                                                                                                                        "distancia": 456.25,
+                                                                                                                                                                                                        "tipo": "Valido"
+                                                                                                                                                                                                    },
+                                                                                                                                                                                                    "sig": {
+                                                                                                                                                                                                        "info": {
+                                                                                                                                                                                                            "@class": "modelo.Viaje",
+                                                                                                                                                                                                            "id": 48,
+                                                                                                                                                                                                            "idPais": 7,
+                                                                                                                                                                                                            "nroPais": 25,
+                                                                                                                                                                                                            "distancia": 456.02,
+                                                                                                                                                                                                            "tipo": "Valido"
+                                                                                                                                                                                                        }
+                                                                                                                                                                                                    }
+                                                                                                                                                                                                }
+                                                                                                                                                                                            }
+                                                                                                                                                                                        }
                                                                                                                                                                                     }
                                                                                                                                                                                 }
                                                                                                                                                                             }
@@ -430,6 +480,6 @@
                 }
             }
         },
-        "size": 43
+        "size": 48
     }
 }

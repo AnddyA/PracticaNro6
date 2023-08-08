@@ -8,14 +8,16 @@ import controlador.Dao.PaisDao;
 import controlador.Dao.ViajeDao;
 import controlador.ed.grafo.Adycencia;
 import controlador.ed.grafo.GrafoEtiquetadoD;
+import controlador.ed.grafo.GrafoEtiquetadoND;
 import controlador.ed.lista.ListaEnlazada;
 import controlador.ed.lista.exception.PosicionException;
 import controlador.ed.lista.exception.VacioException;
 import java.util.HashMap;
+import java.util.HashSet;
 import java.util.Map;
 import modelo.Pais;
 import modelo.Viaje;
-
+import vista.utilidadesGrafo.Utilidades;
 
 public class PaisGrafo {
 
@@ -98,7 +100,6 @@ public class PaisGrafo {
     }
 
     //------------Calcular camino mas corto "Metodo Floyd"---------
-    
     public ListaEnlazada<Pais> calcularCaminoMinimoFloyd(Pais origen, Pais destino) throws VacioException, PosicionException {
         int n = lista.size();
         HashMap<Pais, Integer> indiceMap = new HashMap<>();
@@ -187,11 +188,9 @@ public class PaisGrafo {
         }
         return null;
     }
-    
-    //------------Calcular camino mas corto "Metodo BellmanFord"---------
 
-    
-    public ListaEnlazada<Pais> bellmanFord(Pais origen, Pais destino) throws VacioException, PosicionException{
+    //------------Calcular camino mas corto "Metodo BellmanFord"---------
+    public ListaEnlazada<Pais> bellmanFord(Pais origen, Pais destino) throws VacioException, PosicionException {
         HashMap<Pais, Double> distancias = new HashMap<>();
         HashMap<Pais, Pais> siguiente = new HashMap<>();
         ListaEnlazada<Pais> camino = new ListaEnlazada<>();
@@ -207,12 +206,12 @@ public class PaisGrafo {
         }
 
         // Relajar las aristas V - 1 veces (donde V es el número de vértices)
-        for (int v = 1; v <= grafo.numVertices() - 1; v++) {
-            for (int i = 1; i <= grafo.numVertices(); i++) {
-                Pais paisI = grafo.getEtiqueta(i);
-                ListaEnlazada<Adycencia> adycentes = grafo.adyacentesGE(grafo.getEtiqueta(i));
-                for (int j = 0; j < adycentes.size(); j++) {
-                    Adycencia ady = adycentes.get(j);
+        for (int i = 1; i <= grafo.numVertices() - 1; i++) {
+            for (int j = 1; j <= grafo.numVertices(); j++) {
+                Pais paisI = grafo.getEtiqueta(j);
+                ListaEnlazada<Adycencia> adycentes = grafo.adyacentesGE(grafo.getEtiqueta(j));
+                for (int k = 0; k < adycentes.size(); k++) {
+                    Adycencia ady = adycentes.get(k);
                     Pais paisJ = grafo.getEtiqueta(ady.getDestino());
 
                     if (distancias.get(paisI) + ady.getPeso() < distancias.get(paisJ)) {
@@ -237,9 +236,9 @@ public class PaisGrafo {
 
         return camino;
     }
-    
-    public ListaEnlazada<Pais> reconstruirCamino(Pais destino, Pais origen, HashMap<Pais, Pais> siguiente, ListaEnlazada<Pais> camino){
-        
+
+    public ListaEnlazada<Pais> reconstruirCamino(Pais destino, Pais origen, HashMap<Pais, Pais> siguiente, ListaEnlazada<Pais> camino) {
+
         while (destino != null && !destino.equals(origen)) {
             camino.insertarInicio(destino);
             destino = siguiente.get(destino);
@@ -252,5 +251,48 @@ public class PaisGrafo {
         }
         return camino;
     }
+
+    //------Algoritmo de busqueda en profundidad-------
+     public boolean esConectado() throws VacioException, PosicionException{
+        if (grafo.numVertices() == 0) {
+            return false; // El grafo vacío no está conectado
+        }
+
+        HashSet<Pais> visitados = new HashSet<>();
+        ListaEnlazada<Adycencia> adycentes = grafo.adyacentesGE(grafo.getEtiqueta(1)); // Comenzar la búsqueda desde el primer vértice
+
+        dfs(grafo.getEtiqueta(1), visitados); // Realizar búsqueda DFS desde el primer vértice
+
+        return visitados.size() == grafo.numVertices(); // Si se visitaron todos los vértices, el grafo está conectado
+    }
+
+    private void dfs(Pais vertice, HashSet<Pais> visitados) throws VacioException, PosicionException {
+        visitados.add(vertice);
+        ListaEnlazada<Adycencia> adycentes = grafo.adyacentesGE(vertice);
+
+        for (int i = 0; i < adycentes.size(); i++) {
+            Adycencia ady = adycentes.get(i);
+            Pais verticeDestino = grafo.getEtiqueta(ady.getDestino());
+            if (!visitados.contains(verticeDestino)) {
+                dfs(verticeDestino, visitados);
+            }
+        }
+    }
+
+    public static void main(String[] args) {
+    PaisGrafo pg = new PaisGrafo();
+
+    try {
+        boolean esConectado = pg.esConectado();
+        if (esConectado) {
+            System.out.println("El grafo está conectado.");
+        } else {
+            System.out.println("El grafo no está conectado.");
+        }
+    } catch (Exception e) {
+        e.printStackTrace();
+    }
+}
+
 
 }

@@ -20,6 +20,7 @@ public class PaisDao extends AdaptadorDao<Pais> {
     
     public PaisDao() {
         super(Pais.class);
+        
     }
     
     public Pais getPais() {

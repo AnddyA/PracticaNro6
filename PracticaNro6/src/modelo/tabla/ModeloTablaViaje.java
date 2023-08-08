@@ -4,9 +4,11 @@
  */
 package modelo.tabla;
 
+import controlador.Dao.PaisDao;
 import controlador.ed.lista.ListaEnlazada;
 import javax.swing.table.AbstractTableModel;
 import modelo.Pais;
+import modelo.Viaje;
 
 /**
  *
@@ -14,13 +16,13 @@ import modelo.Pais;
  */
 public class ModeloTablaViaje extends AbstractTableModel {
 
-    ListaEnlazada<Pais> lista = new ListaEnlazada<>();
+    ListaEnlazada<Viaje> lista = new ListaEnlazada<>();
 
-    public ListaEnlazada<Pais> getLista() {
+    public ListaEnlazada<Viaje> getLista() {
         return lista;
     }
 
-    public void setLista(ListaEnlazada<Pais> lista) {
+    public void setLista(ListaEnlazada<Viaje> lista) {
         this.lista = lista;
     }
 
@@ -36,16 +38,18 @@ public class ModeloTablaViaje extends AbstractTableModel {
 
     @Override
     public Object getValueAt(int i, int i1) {
-        Pais p = null;
+        Viaje v = null;
+        PaisDao pd = new PaisDao();
         try {
-            p = lista.get(i);
+            v = lista.get(i);
+            pd.setPais(pd.buscarId(v.getNroViaje()));
         } catch (Exception e) {
         }
         switch (i1) {
-            case 0: return (p != null) ? p.getId() : "No definido";
-            case 1: return (p != null) ? p.getNombre() : "No definido";
-            case 2: return (p != null) ? p.getCiudad() : "No definido";
-            case 3: return (p != null) ? p.getEstado() : "No definido";
+            case 0: return (v != null) ? v.getId() : "No definido";
+            case 1: return (v != null) ? new PaisDao().obtener(v.getIdPais()).getNombre() : "No definido";
+            case 2: return (v != null) ? pd.getPais().getNombre() : "No definido";
+            case 3: return (v != null) ? v.getDistancia() : "No definido";
                 
             default:
                 return null;
@@ -55,9 +59,9 @@ public class ModeloTablaViaje extends AbstractTableModel {
     public String getColumnName(int column){
         switch (column) {
             case 0: return "ID";
-            case 1: return "Pais";
-            case 2: return "Ciudad";
-            case 3: return "Estado";
+            case 1: return "ID Origen";
+            case 2: return "ID Destino";
+            case 3: return "Distancia";
                 
             default:
                 return null;

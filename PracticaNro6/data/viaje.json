@@ -296,6 +296,106 @@
                                                                                                                                                 "nroViaje": 29,
                                                                                                                                                 "distancia": 15432.67,
                                                                                                                                                 "tipo": "Valido"
+                                                                                                                                            },
+                                                                                                                                            "sig": {
+                                                                                                                                                "info": {
+                                                                                                                                                    "@class": "modelo.Viaje",
+                                                                                                                                                    "id": 34,
+                                                                                                                                                    "idPais": 19,
+                                                                                                                                                    "nroViaje": 12,
+                                                                                                                                                    "distancia": 456.45,
+                                                                                                                                                    "tipo": "Valido"
+                                                                                                                                                },
+                                                                                                                                                "sig": {
+                                                                                                                                                    "info": {
+                                                                                                                                                        "@class": "modelo.Viaje",
+                                                                                                                                                        "id": 35,
+                                                                                                                                                        "idPais": 10,
+                                                                                                                                                        "nroViaje": 18,
+                                                                                                                                                        "distancia": 645.23,
+                                                                                                                                                        "tipo": "Valido"
+                                                                                                                                                    },
+                                                                                                                                                    "sig": {
+                                                                                                                                                        "info": {
+                                                                                                                                                            "@class": "modelo.Viaje",
+                                                                                                                                                            "id": 36,
+                                                                                                                                                            "idPais": 11,
+                                                                                                                                                            "nroViaje": 14,
+                                                                                                                                                            "distancia": 358,
+                                                                                                                                                            "tipo": "Valido"
+                                                                                                                                                        },
+                                                                                                                                                        "sig": {
+                                                                                                                                                            "info": {
+                                                                                                                                                                "@class": "modelo.Viaje",
+                                                                                                                                                                "id": 37,
+                                                                                                                                                                "idPais": 10,
+                                                                                                                                                                "nroViaje": 21,
+                                                                                                                                                                "distancia": 501,
+                                                                                                                                                                "tipo": "Valido"
+                                                                                                                                                            },
+                                                                                                                                                            "sig": {
+                                                                                                                                                                "info": {
+                                                                                                                                                                    "@class": "modelo.Viaje",
+                                                                                                                                                                    "id": 38,
+                                                                                                                                                                    "idPais": 9,
+                                                                                                                                                                    "nroViaje": 22,
+                                                                                                                                                                    "distancia": 600.02,
+                                                                                                                                                                    "tipo": "Valido"
+                                                                                                                                                                },
+                                                                                                                                                                "sig": {
+                                                                                                                                                                    "info": {
+                                                                                                                                                                        "@class": "modelo.Viaje",
+                                                                                                                                                                        "id": 39,
+                                                                                                                                                                        "idPais": 23,
+                                                                                                                                                                        "nroViaje": 25,
+                                                                                                                                                                        "distancia": 756.22,
+                                                                                                                                                                        "tipo": "Valido"
+                                                                                                                                                                    },
+                                                                                                                                                                    "sig": {
+                                                                                                                                                                        "info": {
+                                                                                                                                                                            "@class": "modelo.Viaje",
+                                                                                                                                                                            "id": 40,
+                                                                                                                                                                            "idPais": 25,
+                                                                                                                                                                            "nroViaje": 24,
+                                                                                                                                                                            "distancia": 945.12,
+                                                                                                                                                                            "tipo": "Valido"
+                                                                                                                                                                        },
+                                                                                                                                                                        "sig": {
+                                                                                                                                                                            "info": {
+                                                                                                                                                                                "@class": "modelo.Viaje",
+                                                                                                                                                                                "id": 41,
+                                                                                                                                                                                "idPais": 14,
+                                                                                                                                                                                "nroViaje": 28,
+                                                                                                                                                                                "distancia": 745.24,
+                                                                                                                                                                                "tipo": "Valido"
+                                                                                                                                                                            },
+                                                                                                                                                                            "sig": {
+                                                                                                                                                                                "info": {
+                                                                                                                                                                                    "@class": "modelo.Viaje",
+                                                                                                                                                                                    "id": 42,
+                                                                                                                                                                                    "idPais": 15,
+                                                                                                                                                                                    "nroViaje": 27,
+                                                                                                                                                                                    "distancia": 965,
+                                                                                                                                                                                    "tipo": "Valido"
+                                                                                                                                                                                },
+                                                                                                                                                                                "sig": {
+                                                                                                                                                                                    "info": {
+                                                                                                                                                                                        "@class": "modelo.Viaje",
+                                                                                                                                                                                        "id": 43,
+                                                                                                                                                                                        "idPais": 17,
+                                                                                                                                                                                        "nroViaje": 26,
+                                                                                                                                                                                        "distancia": 765.45,
+                                                                                                                                                                                        "tipo": "Valido"
+                                                                                                                                                                                    }
+                                                                                                                                                                                }
+                                                                                                                                                                            }
+                                                                                                                                                                        }
+                                                                                                                                                                    }
+                                                                                                                                                                }
+                                                                                                                                                            }
+                                                                                                                                                        }
+                                                                                                                                                    }
+                                                                                                                                                }
                                                                                                                                             }
                                                                                                                                         }
                                                                                                                                     }
@@ -330,6 +430,6 @@
                 }
             }
         },
-        "size": 33
+        "size": 43
     }
 }

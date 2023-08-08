@@ -6,19 +6,16 @@ package vista;
 
 import controlador.Dao.Grafo.PaisGrafo;
 import controlador.Dao.PaisDao;
+import controlador.Dao.ViajeDao;
 import controlador.ed.lista.ListaEnlazada;
-import controlador.ed.lista.exception.PosicionException;
-import controlador.ed.lista.exception.VacioException;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 import modelo.Pais;
-import modelo.tabla.ModeloTablaViaje;
+import modelo.tabla.ModeloTablaPais;
 import vista.utilidadesGrafo.Utilidades;
 
 public class FrmViaje extends java.awt.Dialog {
 
-    private ModeloTablaViaje modelo = new ModeloTablaViaje();
+    private ModeloTablaPais modelo = new ModeloTablaPais();
     private PaisDao pd = new PaisDao();
     private PaisGrafo pg = new PaisGrafo();
 
@@ -51,7 +48,7 @@ public class FrmViaje extends java.awt.Dialog {
         new FrmGrafo(null, true, pg.getGrafo()).setVisible(true);
     }
 
-    public void CaminoBellmanFord() {
+    public void caminoBellmanFord() {
 
         try {
             Pais origen = Utilidades.obtenerCombo(pg.getLista(), cbxOrigen);
@@ -114,8 +111,14 @@ public class FrmViaje extends java.awt.Dialog {
             }
         });
 
-        jPanel16.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Viajes", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Liberation Sans", 3, 14))); // NOI18N
+        jPanel15.setBackground(new java.awt.Color(255, 255, 255));
 
+        jPanel16.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel16.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Viajes", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Liberation Sans", 3, 14), new java.awt.Color(102, 102, 102))); // NOI18N
+        jPanel16.setForeground(new java.awt.Color(204, 204, 204));
+
+        btnGrafo7.setBackground(new java.awt.Color(102, 102, 102));
+        btnGrafo7.setForeground(new java.awt.Color(255, 255, 255));
         btnGrafo7.setText("Ver Grafo");
         btnGrafo7.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -124,16 +127,27 @@ public class FrmViaje extends java.awt.Dialog {
         });
 
         jLabel1.setFont(new java.awt.Font("Segoe UI", 3, 14)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(102, 102, 102));
         jLabel1.setText("Seleccione Origen y Desino");
 
+        jLabel2.setBackground(new java.awt.Color(51, 51, 51));
+        jLabel2.setForeground(new java.awt.Color(102, 102, 102));
         jLabel2.setText("Origen:");
 
+        jLabel3.setBackground(new java.awt.Color(51, 51, 51));
+        jLabel3.setForeground(new java.awt.Color(102, 102, 102));
         jLabel3.setText("Destino:");
 
+        cbxDestino.setBackground(new java.awt.Color(102, 102, 102));
+        cbxDestino.setForeground(new java.awt.Color(255, 255, 255));
         cbxDestino.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 
+        cbxOrigen.setBackground(new java.awt.Color(102, 102, 102));
+        cbxOrigen.setForeground(new java.awt.Color(255, 255, 255));
         cbxOrigen.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 
+        btnFLoyd.setBackground(new java.awt.Color(102, 102, 102));
+        btnFLoyd.setForeground(new java.awt.Color(255, 255, 255));
         btnFLoyd.setText("FLOYD");
         btnFLoyd.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -141,6 +155,8 @@ public class FrmViaje extends java.awt.Dialog {
             }
         });
 
+        btnBford.setBackground(new java.awt.Color(102, 102, 102));
+        btnBford.setForeground(new java.awt.Color(255, 255, 255));
         btnBford.setText("B-FORD");
         btnBford.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -148,6 +164,8 @@ public class FrmViaje extends java.awt.Dialog {
             }
         });
 
+        btnRegistro.setBackground(new java.awt.Color(102, 102, 102));
+        btnRegistro.setForeground(new java.awt.Color(255, 255, 255));
         btnRegistro.setText("?");
         btnRegistro.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -210,8 +228,10 @@ public class FrmViaje extends java.awt.Dialog {
                 .addContainerGap())
         );
 
-        jPanel17.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Paises", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Liberation Sans", 3, 14))); // NOI18N
+        jPanel17.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel17.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Paises", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Liberation Sans", 3, 14), new java.awt.Color(102, 102, 102))); // NOI18N
 
+        tblTabla.setBackground(new java.awt.Color(204, 204, 204));
         tblTabla.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null},
@@ -317,7 +337,7 @@ public class FrmViaje extends java.awt.Dialog {
 
     private void btnBfordActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBfordActionPerformed
         // TODO add your handling code here:
-        CaminoBellmanFord();
+        caminoBellmanFord();
     }//GEN-LAST:event_btnBfordActionPerformed
 
     private void btnRegistroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegistroActionPerformed

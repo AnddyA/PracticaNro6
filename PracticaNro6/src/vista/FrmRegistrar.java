@@ -35,8 +35,13 @@ public class FrmRegistrar extends javax.swing.JDialog {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
-        jPanel2.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Registrar", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Segoe UI", 3, 14))); // NOI18N
+        jPanel1.setBackground(new java.awt.Color(255, 255, 255));
 
+        jPanel2.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel2.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Registrar", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Segoe UI", 3, 14), new java.awt.Color(102, 102, 102))); // NOI18N
+
+        btnRegistrarViaje.setBackground(new java.awt.Color(102, 102, 102));
+        btnRegistrarViaje.setForeground(new java.awt.Color(255, 255, 255));
         btnRegistrarViaje.setText("Registrar Viaje");
         btnRegistrarViaje.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -44,6 +49,8 @@ public class FrmRegistrar extends javax.swing.JDialog {
             }
         });
 
+        btnRegistrarPais.setBackground(new java.awt.Color(102, 102, 102));
+        btnRegistrarPais.setForeground(new java.awt.Color(255, 255, 255));
         btnRegistrarPais.setText("Registrar Pais");
         btnRegistrarPais.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {

@@ -15,6 +15,7 @@ import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 import modelo.Pais;
 import modelo.TipoViaje;
+import modelo.tabla.ModeloTablaViaje;
 import vista.utilidadesGrafo.Utilidades;
 
 /**
@@ -23,6 +24,7 @@ import vista.utilidadesGrafo.Utilidades;
  */
 public class FrmRegistrarViaje extends javax.swing.JDialog {
 
+    private ModeloTablaViaje modelo = new ModeloTablaViaje();
     private PaisGrafo pg = new PaisGrafo();
     private ViajeDao vd = new ViajeDao();
     private PaisDao pd = new PaisDao();
@@ -35,6 +37,21 @@ public class FrmRegistrarViaje extends javax.swing.JDialog {
         initComponents();
         setLocationRelativeTo(null);
         cargarCombo();
+        cargarTabla();
+    }
+
+    public void cargarTabla() {
+        modelo.setLista(vd.listar());
+        tblViajes.setModel(modelo);
+        tblViajes.updateUI();
+    }
+
+    public void cargarCombo() {
+        try {
+            Utilidades.cargarCombo(pg.getLista(), cbxOrigen);
+            Utilidades.cargarCombo(pg.getLista(), cbxDestino);
+        } catch (Exception ex) {
+        }
     }
 
     /**
@@ -54,27 +71,58 @@ public class FrmRegistrarViaje extends javax.swing.JDialog {
         jLabel3 = new javax.swing.JLabel();
         txtDistancia = new javax.swing.JTextField();
         jButton1 = new javax.swing.JButton();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        tblViajes = new javax.swing.JTable();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
-        jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "REGISTRO DE VIAJES", javax.swing.border.TitledBorder.CENTER, javax.swing.border.TitledBorder.ABOVE_TOP));
+        jPanel1.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "REGISTRO DE VIAJES", javax.swing.border.TitledBorder.CENTER, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Segoe UI", 3, 14), new java.awt.Color(102, 102, 102))); // NOI18N
 
+        jLabel1.setBackground(new java.awt.Color(102, 102, 102));
+        jLabel1.setForeground(new java.awt.Color(102, 102, 102));
         jLabel1.setText("ORIGEN");
 
+        jLabel2.setBackground(new java.awt.Color(102, 102, 102));
+        jLabel2.setForeground(new java.awt.Color(102, 102, 102));
         jLabel2.setText("DESTINO");
 
+        cbxOrigen.setBackground(new java.awt.Color(102, 102, 102));
+        cbxOrigen.setForeground(new java.awt.Color(255, 255, 255));
         cbxOrigen.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 
+        cbxDestino.setBackground(new java.awt.Color(102, 102, 102));
+        cbxDestino.setForeground(new java.awt.Color(255, 255, 255));
         cbxDestino.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 
+        jLabel3.setForeground(new java.awt.Color(102, 102, 102));
         jLabel3.setText("DISTANCIA");
 
+        txtDistancia.setBackground(new java.awt.Color(102, 102, 102));
+        txtDistancia.setForeground(new java.awt.Color(255, 255, 255));
+
+        jButton1.setBackground(new java.awt.Color(102, 102, 102));
+        jButton1.setForeground(new java.awt.Color(255, 255, 255));
         jButton1.setText("GUARDAR");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);
             }
         });
+
+        tblViajes.setBackground(new java.awt.Color(204, 204, 204));
+        tblViajes.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
+            },
+            new String [] {
+                "Title 1", "Title 2", "Title 3", "Title 4"
+            }
+        ));
+        jScrollPane1.setViewportView(tblViajes);
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -83,25 +131,29 @@ public class FrmRegistrarViaje extends javax.swing.JDialog {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(jLabel1)
-                        .addGap(18, 18, 18)
-                        .addComponent(cbxOrigen, javax.swing.GroupLayout.PREFERRED_SIZE, 181, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jLabel2)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(cbxDestino, 0, 210, Short.MAX_VALUE)
-                        .addContainerGap())
-                    .addGroup(jPanel1Layout.createSequentialGroup()
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                         .addGap(0, 0, Short.MAX_VALUE)
-                        .addComponent(jLabel3)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(txtDistancia, javax.swing.GroupLayout.PREFERRED_SIZE, 201, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(95, 95, 95))))
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(218, 218, 218)
-                .addComponent(jButton1)
-                .addGap(0, 0, Short.MAX_VALUE))
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                                .addComponent(jLabel3)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(txtDistancia, javax.swing.GroupLayout.PREFERRED_SIZE, 161, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(135, 135, 135))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                                .addComponent(jButton1)
+                                .addGap(190, 190, 190))))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 470, Short.MAX_VALUE)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addComponent(jLabel1)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(cbxOrigen, javax.swing.GroupLayout.PREFERRED_SIZE, 154, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(39, 39, 39)
+                                .addComponent(jLabel2)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(cbxDestino, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                        .addContainerGap())))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -118,7 +170,9 @@ public class FrmRegistrarViaje extends javax.swing.JDialog {
                     .addComponent(txtDistancia, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addComponent(jButton1)
-                .addContainerGap(14, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 214, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(10, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -129,7 +183,9 @@ public class FrmRegistrarViaje extends javax.swing.JDialog {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
 
         pack();
@@ -138,39 +194,26 @@ public class FrmRegistrarViaje extends javax.swing.JDialog {
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         try {
             guardar();
-        } catch (IOException ex) {
-            Logger.getLogger(FrmRegistrarViaje.class.getName()).log(Level.SEVERE, null, ex);
-        } catch (VacioException ex) {
-            Logger.getLogger(FrmRegistrarViaje.class.getName()).log(Level.SEVERE, null, ex);
-        } catch (PosicionException ex) {
-            Logger.getLogger(FrmRegistrarViaje.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (Exception ex) {
         }
     }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
      * @param args the command line arguments
      */
-    public void cargarCombo() {
-        try {
-            Utilidades.cargarCombo(pg.getLista(), cbxOrigen);
-            Utilidades.cargarCombo(pg.getLista(), cbxDestino);
-        } catch (Exception ex) {
-        }
-    }
-
     private void guardar() throws IOException, VacioException, PosicionException {
         if (txtDistancia.getText().toString().trim().isEmpty()) {
             JOptionPane.showMessageDialog(null, "LLENE LOS CAMPOS", "ERROR", JOptionPane.ERROR_MESSAGE);
         } else {
-            Pais origen=  Utilidades.obtenerCombo(pd.listar(), cbxOrigen);
-              Pais dest=  Utilidades.obtenerCombo(pd.listar(), cbxDestino);
-         
+            Pais origen = Utilidades.obtenerCombo(pd.listar(), cbxOrigen);
+            Pais dest = Utilidades.obtenerCombo(pd.listar(), cbxDestino);
+
             vd.getViaje().setIdPais(origen.getId());
             vd.getViaje().setNroViaje(String.valueOf(dest.getId()));
             vd.getViaje().setDistancia(Double.parseDouble(txtDistancia.getText()));
             vd.getViaje().setTipo(TipoViaje.Valido);
             vd.guardar();
-      
+
             JOptionPane.showMessageDialog(null, "GUARDADO");
         }
 
@@ -223,6 +266,8 @@ public class FrmRegistrarViaje extends javax.swing.JDialog {
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JTable tblViajes;
     private javax.swing.JTextField txtDistancia;
     // End of variables declaration//GEN-END:variables
 }
